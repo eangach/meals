@@ -6,4 +6,5 @@ class Meals < Sinatra::Base
     ''
   end
 
+  run! if __FILE__ == $PROGRAM_NAME
 end
