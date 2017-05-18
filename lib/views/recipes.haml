@@ -1,3 +1,5 @@
 %ul
-  -recipes.each do |recipe|
-    %li= recipe
+  -recipes.each_with_index do |recipe, index|
+    %li
+      %a{ href: "/recipes/#{index}" }
+        = recipe
