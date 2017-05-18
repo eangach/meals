@@ -99,6 +99,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara
   guard
   guard-minitest
   haml (< 5)

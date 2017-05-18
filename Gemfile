@@ -10,6 +10,7 @@ gem 'haml', '<5'
 group :development, :test do
   gem 'minitest'
   gem 'minitest-reporters'
+  gem 'capybara'
   gem 'minitest-capybara', require: 'minitest/capybara'
   gem 'selenium-webdriver'
   gem 'rack-test'
