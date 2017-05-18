@@ -85,3 +85,11 @@
 * TODO: The website will have a contact us page
 * TODO: Contact us will be via email
 * TODO: An admin account can disable contact us
+
+# Navigation
+* TODO: The website will have a common navbar
+* TODO: The navbar will have a link to the recipes list
+* TODO: The navbar will have a link to the meal plan
+* TODO: The navbar will have a link to the about page
+* TODO: The navbar will have a link to the registration page
+* TODO: The nabbar will have a link to the login page
