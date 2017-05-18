@@ -3,7 +3,7 @@ require 'sinatra/base'
 class Meals < Sinatra::Base
 
   get '/recipes' do
-    '<html/>'
+    haml :recipes
   end
 
   run! if __FILE__ == $PROGRAM_NAME
