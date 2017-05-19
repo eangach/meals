@@ -3,6 +3,10 @@ require_relative 'meals/recipe'
 
 class Meals < Sinatra::Base
 
+  configure :production do
+    DataMapper.setup(:default, ENV['DATABASE_URL'])
+  end
+
   configure :development, :test do
     # DataMapper::Logger.new($stdout, :debug)
     DataMapper.setup(:default, 'sqlite::memory:')

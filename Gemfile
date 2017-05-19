@@ -8,6 +8,10 @@ gem 'sinatra'
 gem 'haml', '<5'
 gem 'data_mapper'
 
+group :production do
+  gem 'dm-postgres-adapter'
+end
+
 group :development, :test do
   gem 'dm-sqlite-adapter'
   gem 'database_cleaner'
