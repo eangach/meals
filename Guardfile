@@ -1,3 +1,5 @@
+ignore([%r{^db/*}])
+
 # Unbit test
 guard :minitest, test_folders: 'test/unit', test_file_patterns: '*_test.rb' do
   watch(%r{^test/unit/(.*)_test\.rb$})
