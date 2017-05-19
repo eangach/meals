@@ -1,6 +1,11 @@
 require_relative 'test_helper'
 
 describe "my example app" do
+  before do
+    DatabaseCleaner.clean
+    Recipe.create title: 'Sample recipe 1'
+    Recipe.create title: 'Sample recipe 2'
+  end
 
   it 'has a recipes page' do
     visit '/recipes'

@@ -6,8 +6,11 @@ ruby File.open('.ruby-version', 'rb') { |f| f.read.chomp.sub('ruby-', '')  } if 
 
 gem 'sinatra'
 gem 'haml', '<5'
+gem 'data_mapper'
 
 group :development, :test do
+  gem 'dm-sqlite-adapter'
+  gem 'database_cleaner'
   gem 'minitest'
   gem 'minitest-reporters'
   gem 'capybara'

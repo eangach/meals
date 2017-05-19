@@ -1,11 +1,16 @@
 require 'sinatra/base'
+require_relative 'meals/recipe'
 
 class Meals < Sinatra::Base
 
-  get '/recipes' do
-    @recipes =  [ 'Sample recipe 1', 'Sample recipe 2' ]
+  configure :development, :test do
+    # DataMapper::Logger.new($stdout, :debug)
+    DataMapper.setup(:default, 'sqlite::memory:')
+    DataMapper.auto_migrate!
+  end
 
-    haml :recipes, locals: { recipes: @recipes }
+  get '/recipes' do
+    haml :recipes, locals: { recipes: ::Recipe.all }
   end
 
   run! if __FILE__ == $PROGRAM_NAME
