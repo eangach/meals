@@ -17,4 +17,5 @@ group :development, :test do
   gem 'rerun'
   gem 'guard'
   gem 'guard-minitest'
+  gem 'foreman'
 end
