@@ -2,3 +2,5 @@ FIXME: Need haml / tilr fix to upgrade top ruby 2.4.1
 DONE:  Update requirements to use recipe title instead of recipe name
 TODO:  Add pagination requirement for the recipe list
 TODO:  Sort out database migration method
+TODO:  Add requirement for source being a link if it has a URL
+TODO:  Add requirement for source URL
