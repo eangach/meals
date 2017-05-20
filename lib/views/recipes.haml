@@ -1,5 +1,6 @@
-%ul.recipe_list
-  -recipes.each_with_index do |recipe, index|
-    %li
-      %a{ href: "/recipes/#{recipe.id}" }
-        = recipe.title
+.recipe_list
+  %ul
+    -recipes.each_with_index do |recipe, index|
+      %li
+        %a{ href: "/recipes/#{recipe.id}" }
+          = recipe.title
