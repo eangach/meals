@@ -26,7 +26,7 @@
 
 # View recipes
 * TODO: Any user can view a recipe
-* TODO: Any user can view a list of recipes
+* DONE: Any user can view a list of recipes
 * TODO: Any user can search for a recipe using the recipe name or part of the recipe name
 * TODO: Any user can filter the recipe list using keywords
 
