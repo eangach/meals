@@ -54,7 +54,7 @@
 * TODO: A logged in account can mark a meal plan recipe as not a favourite
 
 # Recipe
-* TODO: A recipe has a name
+* TODO: A recipe has a title
 * TODO: A recipe can have a summary
 * TODO: A recipe can have an image
 * TODO: A recipe can have a source
