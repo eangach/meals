@@ -1,6 +1,10 @@
 require_relative 'test_helper'
+require 'database_cleaner'
+require 'nokogiri'
 
-describe 'Acceptance Tests' do
+DatabaseCleaner.strategy = :truncation
+
+describe 'Unit Tests' do
   describe 'View recipe' do
     before do
       DatabaseCleaner.clean
@@ -9,10 +13,9 @@ describe 'Acceptance Tests' do
 
     let(:id) { Recipe.first(title: 'Sample recipe 1').id }
 
-    it 'has the title' do
-      visit "/recipes/#{id}"
-      page.body.must_include('Sample recipe 1')
+    it 'successfully loads' do
+      get "/recipes/#{id}"
+      last_response.ok?.must_equal true
     end
   end
 end
-

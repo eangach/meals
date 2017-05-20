@@ -9,7 +9,7 @@ describe 'Acceptance Tests' do
 
     let(:id) { Recipe.first(title: 'Sample recipe 1').id }
 
-    it 'has the title' do
+    it 'has a recipes page' do
       visit "/recipes/#{id}"
       page.body.must_include('Sample recipe 1')
     end
