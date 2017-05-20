@@ -18,11 +18,11 @@ class Meals < Sinatra::Base
   end
 
   get '/recipes' do
-    haml :recipes, locals: { recipes: ::Recipe.all }
+    haml :recipes, locals: { recipes: Recipe.all }
   end
 
   get '/recipes/:id' do
-    haml :recipe, locals: { recipe: ::Recipe.get(params['id']) }
+    haml :recipe, locals: { recipe: Recipe.get(params['id']) }
   end
 
   run! if __FILE__ == $PROGRAM_NAME
