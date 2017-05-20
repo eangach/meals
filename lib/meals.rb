@@ -13,6 +13,10 @@ class Meals < Sinatra::Base
     DataMapper.auto_migrate!
   end
 
+  get '/' do
+    redirect '/recipes'
+  end
+
   get '/recipes' do
     haml :recipes, locals: { recipes: ::Recipe.all }
   end
