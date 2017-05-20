@@ -87,9 +87,9 @@
 * TODO: An admin account can disable contact us
 
 # Navigation
-* TODO: The website will have a common navbar
-* TODO: The navbar will have a link to the recipes list
+* DONE: The website will have a common navbar
+* DONE: The navbar will have a link to the recipes list
 * TODO: The navbar will have a link to the meal plan
-* TODO: The navbar will have a link to the about page
+* DONE: The navbar will have a link to the about page
 * TODO: The navbar will have a link to the registration page
 * TODO: The nabbar will have a link to the login page
