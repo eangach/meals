@@ -63,7 +63,7 @@
 * TODO: A recipe can have a yield
 * TODO: A recipe can have the preparation time
 * TODO: A recipe can have the cooking time
-* TODO: A recipe can have the overall time
+* TODO: A recipe can have the total time
 * TODO: A recipe can have a list a ingredients
 * TODO: A recipe can have a list of instructions
 

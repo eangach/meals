@@ -22,8 +22,8 @@ describe Recipe do
   it 'can have an image' do
     recipe.image.must_be_nil
 
-    recipe.image = 'An image ref'
-    recipe.image.must_equal 'An image ref'
+    recipe.image = 'An image uri'
+    recipe.image.must_equal 'An image uri'
   end
 
   it 'can have a source' do
@@ -40,11 +40,11 @@ describe Recipe do
     recipe.servings.must_equal '4'
   end
 
-  it 'can have a yield' do
-    recipe.yield.must_be_nil
+  it 'can have the yield' do
+    recipe.yields.must_be_nil
 
-    recipe.yield= '2 servings'
-    recipe.yield.must_equal '2 servings'
+    recipe.yields= '2 servings'
+    recipe.yields.must_equal '2 servings'
   end
 
   it 'can have a preparation time' do
@@ -61,10 +61,10 @@ describe Recipe do
     recipe.cook_time.must_equal '30 minutes'
   end
 
-  it 'can have an overall time' do
-    recipe.time.must_be_nil
+  it 'can have a total time' do
+    recipe.total_time.must_be_nil
 
-    recipe.time = '1 hour'
-    recipe.time.must_equal '1 hour'
+    recipe.total_time = '1 hour'
+    recipe.total_time.must_equal '1 hour'
   end
 end

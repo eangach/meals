@@ -5,3 +5,5 @@ TODO:  Sort out database migration method
 TODO:  Add requirement for source being a link if it has a URL
 TODO:  Add requirement for source URL
 TODO:  Recipe database timestamps
+TODO:  Change number of servings to an integer
+TODO:  Rename image to image_uri

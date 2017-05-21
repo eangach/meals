@@ -1,1 +1,27 @@
-%h1= recipe.title
+.recipe
+  .title
+    %h1= recipe.title
+  -if recipe.summary
+    .summary
+      %p= recipe.summary
+  -if recipe.image
+    .image
+      %img{ src: recipe.image }
+  -if recipe.source
+    .source
+      %p= recipe.source
+  -if recipe.servings
+    .servings
+      %p= recipe.servings
+  -if recipe.yields
+    .yields
+      %p= recipe.yields
+  -if recipe.prep_time
+    .prep_time
+      %p= recipe.prep_time
+  -if recipe.cook_time
+    .cook_time
+      %p= recipe.cook_time
+  -if recipe.total_time
+    .total_time
+      %p= recipe.total_time

@@ -10,10 +10,10 @@ class Recipe
   property :image, Text
   property :source, Text
   property :servings, String
-  property :yield, String
+  property :yields, String
   property :prep_time, String
   property :cook_time, String
-  property :time, String
+  property :total_time, String
   property :added_on, Date
 end
 
