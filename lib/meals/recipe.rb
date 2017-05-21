@@ -7,7 +7,7 @@ class Recipe
   property :id, Serial
   property :title, String
   property :summary, Text
-  property :image, Text
+  property :image_uri, Text
   property :source, Text
   property :servings, String
   property :yields, String

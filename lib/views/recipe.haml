@@ -4,24 +4,36 @@
   -if recipe.summary
     .summary
       %p= recipe.summary
-  -if recipe.image
+  -if recipe.image_uri
     .image
-      %img{ src: recipe.image }
+      %img{ src: recipe.image_uri }
   -if recipe.source
     .source
-      %p= recipe.source
+      %p
+        Source:
+        = recipe.source
   -if recipe.servings
     .servings
-      %p= recipe.servings
+      %p
+        Servings:
+        = recipe.servings
   -if recipe.yields
     .yields
-      %p= recipe.yields
+      %p
+        Yields:
+        = recipe.yields
   -if recipe.prep_time
     .prep_time
-      %p= recipe.prep_time
+      %p
+        Prep Time:
+        = recipe.prep_time
   -if recipe.cook_time
     .cook_time
-      %p= recipe.cook_time
+      %p
+        Cook Time:
+        = recipe.cook_time
   -if recipe.total_time
     .total_time
-      %p= recipe.total_time
+      %p
+        Time:
+        = recipe.total_time

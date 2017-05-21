@@ -42,7 +42,7 @@ describe 'Unit Tests' do
     end
 
     it 'can have an image' do
-      recipe.image = 'An image uri'
+      recipe.image_uri = 'An image uri'
       recipe.save
 
       get "/recipes/#{recipe.id}"
@@ -53,7 +53,7 @@ describe 'Unit Tests' do
     end
 
     it 'has the image as optional' do
-      recipe.image.must_be_nil
+      recipe.image_uri.must_be_nil
 
       get "/recipes/#{recipe.id}"
       html = last_response.body
@@ -71,7 +71,7 @@ describe 'Unit Tests' do
       page = Nokogiri::HTML(html)
       source =  page.css('.recipe .source')
 
-      source.text.strip.must_equal 'The recipe source'
+      source.text.strip.gsub(/\s\s+/, ' ').must_equal 'Source: The recipe source'
     end
 
     it 'has the source as optional' do
@@ -94,7 +94,7 @@ describe 'Unit Tests' do
       page = Nokogiri::HTML(html)
       servings =  page.css('.recipe .servings')
 
-      servings.text.strip.must_equal '4'
+      servings.text.strip.gsub(/\s\s+/, ' ').must_equal 'Servings: 4'
     end
 
     it 'has the number of servings as optional' do
@@ -117,7 +117,7 @@ describe 'Unit Tests' do
       page = Nokogiri::HTML(html)
       yields =  page.css('.recipe .yields')
 
-      yields.text.strip.must_equal '4 servings'
+      yields.text.strip.gsub(/\s\s+/, ' ').must_equal 'Yields: 4 servings'
     end
 
     it 'has the yield as optional' do
@@ -140,7 +140,7 @@ describe 'Unit Tests' do
       page = Nokogiri::HTML(html)
       prep_time =  page.css('.recipe .prep_time')
 
-      prep_time.text.strip.must_equal '10 minutes'
+      prep_time.text.strip.gsub(/\s\s+/, ' ').must_equal 'Prep Time: 10 minutes'
     end
 
     it 'has the preparation time as optional' do
@@ -163,7 +163,7 @@ describe 'Unit Tests' do
       page = Nokogiri::HTML(html)
       cook_time =  page.css('.recipe .cook_time')
 
-      cook_time.text.strip.must_equal '30 minutes'
+      cook_time.text.strip.gsub(/\s\s+/, ' ').must_equal 'Cook Time: 30 minutes'
     end
 
     it 'has the cooking time as optional' do
@@ -186,7 +186,7 @@ describe 'Unit Tests' do
       page = Nokogiri::HTML(html)
       total_time =  page.css('.recipe .total_time')
 
-      total_time.text.strip.must_equal '1 hour'
+      total_time.text.strip.gsub(/\s\s+/, ' ').must_equal 'Time: 1 hour'
     end
 
     it 'has the total time as optional' do

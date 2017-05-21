@@ -23,7 +23,7 @@ describe 'Acceptance Tests' do
     end
 
     it 'has the image' do
-      recipe.image = 'An image uri'
+      recipe.image_uri = 'An image uri'
       recipe.save
 
       visit "/recipes/#{recipe.id}"
@@ -37,7 +37,7 @@ describe 'Acceptance Tests' do
       recipe.save
 
       visit "/recipes/#{recipe.id}"
-      page.body.text.must_include('The recipe source')
+      page.body.text.must_include('Source: The recipe source')
     end
 
     it 'has the servings' do
@@ -45,7 +45,7 @@ describe 'Acceptance Tests' do
       recipe.save
 
       visit "/recipes/#{recipe.id}"
-      page.body.text.must_include('4')
+      page.body.text.must_include('Servings: 4')
     end
 
     it 'has the yield' do
@@ -53,7 +53,7 @@ describe 'Acceptance Tests' do
       recipe.save
 
       visit "/recipes/#{recipe.id}"
-      page.body.text.must_include('4 servings')
+      page.body.text.must_include('Yields: 4 servings')
     end
 
     it 'has the preparation time' do
@@ -61,7 +61,7 @@ describe 'Acceptance Tests' do
       recipe.save
 
       visit "/recipes/#{recipe.id}"
-      page.body.text.must_include('10 minutes')
+      page.body.text.must_include('Prep Time: 10 minutes')
     end
 
     it 'has the total cooking time' do
@@ -69,7 +69,7 @@ describe 'Acceptance Tests' do
       recipe.save
 
       visit "/recipes/#{recipe.id}"
-      page.body.text.must_include('30 minutes')
+      page.body.text.must_include('Cook Time: 30 minutes')
     end
 
     it 'has the total time' do
@@ -77,7 +77,7 @@ describe 'Acceptance Tests' do
       recipe.save
 
       visit "/recipes/#{recipe.id}"
-      page.body.text.must_include('1 hour')
+      page.body.text.must_include('Time: 1 hour')
     end
   end
 end

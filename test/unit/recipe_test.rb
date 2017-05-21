@@ -20,10 +20,10 @@ describe Recipe do
   end
 
   it 'can have an image' do
-    recipe.image.must_be_nil
+    recipe.image_uri.must_be_nil
 
-    recipe.image = 'An image uri'
-    recipe.image.must_equal 'An image uri'
+    recipe.image_uri = 'An image uri'
+    recipe.image_uri.must_equal 'An image uri'
   end
 
   it 'can have a source' do
