@@ -8,5 +8,6 @@ TODO:  Recipe database timestamps
 TODO:  Change number of servings to an integer
 DONE:  Rename image to image_uri
 TODO:  Add categories
-TODO: Add directions to recipe
-TODO: Add ingredients to recipe
+TODO:  Add directions to recipe
+TODO:  Add ingredients to recipe
+FIXME: Error with title in recipe.haml if no recipes exist

@@ -79,6 +79,14 @@ describe 'Acceptance Tests' do
       visit "/recipes/#{recipe.id}"
       page.body.text.must_include('Time: 1 hour')
     end
+
+    it 'has the directions' do
+      recipe.directions.create( text: 'Heat skillet.')
+      recipe.save
+
+      visit "/recipes/#{recipe.id}"
+      page.body.text.must_include('Directions')
+      page.body.text.must_include('Heat skillet.')
+    end
   end
 end
-

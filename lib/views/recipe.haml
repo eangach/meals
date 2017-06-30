@@ -37,3 +37,11 @@
       %p
         Time:
         = recipe.total_time
+
+  -if recipe.directions.count > 0
+    .directions
+      %h2 Directions
+      %ol
+        - recipe.directions.each do |direction|
+          .direction
+            %li= direction.text
