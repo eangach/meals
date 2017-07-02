@@ -67,4 +67,22 @@ describe Recipe do
     recipe.total_time = '1 hour'
     recipe.total_time.must_equal '1 hour'
   end
+
+  it 'can have a list of directions' do
+    recipe.directions.count.must_equal 0
+
+    recipe.directions.create text: 'Heat skillet'
+    recipe.directions.count.must_equal 1
+    recipe.directions.first.text.must_equal 'Heat skillet'
+  end
+
+  it 'can have multiple directions' do
+    recipe.directions.count.must_equal 0
+
+    recipe.directions.create text: 'Heat skillet'
+    recipe.directions.create text: 'Add oil'
+    recipe.directions.count.must_equal 2
+    recipe.directions.first.text.must_equal 'Heat skillet'
+    recipe.directions.last.text.must_equal 'Add oil'
+  end
 end

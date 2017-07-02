@@ -44,4 +44,5 @@
       %ol
         - recipe.directions.each do |direction|
           .direction
-            %li= direction.text
+            %li
+              %p= direction.text

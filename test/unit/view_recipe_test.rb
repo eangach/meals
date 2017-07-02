@@ -199,5 +199,54 @@ describe 'Unit Tests' do
 
       total_time.must_be_empty
     end
+
+    it 'can have a list of directions' do
+      recipe.directions.create text: 'Heat pan'
+
+      get "/recipes/#{recipe.id}"
+      html = last_response.body
+      page = Nokogiri::HTML(html)
+      directions =  page.css('.recipe .directions .direction')
+
+      directions.first.text.strip.gsub(/\s\s+/, ' ').must_match /Heat pan/
+    end
+
+    it 'can have multiple directions' do
+      recipe.directions.create text: 'Heat pan'
+      recipe.directions.create text: 'Add oil'
+
+      get "/recipes/#{recipe.id}"
+      html = last_response.body
+      page = Nokogiri::HTML(html)
+      directions =  page.css('.recipe .directions .direction')
+
+      directions.first.text.strip.gsub(/\s\s+/, ' ').must_match /Heat pan/
+      directions.last.text.strip.gsub(/\s\s+/, ' ').must_match /Add oil/
+    end
+
+    it 'has the exact number of directions' do
+      recipe.directions.count.must_equal 0
+      recipe.directions.create text: 'Heat pan'
+      recipe.directions.create text: 'Add oil'
+      recipe.directions.create text: 'Reduce heat'
+
+      get "/recipes/#{recipe.id}"
+      html = last_response.body
+      page = Nokogiri::HTML(html)
+      directions =  page.css('.recipe .directions .direction')
+
+      directions.count.must_equal 3
+    end
+
+    it 'has the list of directions as optional' do
+      recipe.directions.count.must_equal 0
+
+      get "/recipes/#{recipe.id}"
+      html = last_response.body
+      page = Nokogiri::HTML(html)
+      directions =  page.css('.recipe .directions')
+
+      directions.must_be_empty
+    end
   end
 end

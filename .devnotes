@@ -11,3 +11,5 @@ TODO:  Add categories
 TODO:  Add directions to recipe
 TODO:  Add ingredients to recipe
 FIXME: Error with title in recipe.haml if no recipes exist
+FIXME: Recipe unit test when run on own is missing database cleaner
+TODO:  Make title mandatory
