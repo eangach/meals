@@ -58,7 +58,7 @@
 * DONE: A recipe can have a summary
 * TODO: A recipe can have an image
 * DONE: A recipe can have a source
-* TODO: A recipe can have notes
+* DONE: A recipe can have notes
 * DONE: A recipe can have the number of servings
 * DONE: A recipe can have a yield
 * DONE: A recipe can have the preparation time
