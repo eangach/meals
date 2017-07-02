@@ -13,3 +13,6 @@ TODO:  Add ingredients to recipe
 FIXME: Error with title in recipe.haml if no recipes exist
 FIXME: Recipe unit test when run on own is missing database cleaner
 TODO:  Make title mandatory
+TODO:  Add requirement for multiple paragraph directions
+TODO:  Add requirement for an ingredient list in a direction
+FIXME: Be consistent with instriuctions or directions (requiremenmts uses both)

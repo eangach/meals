@@ -25,7 +25,7 @@
 * TODO: The meal plan will be presented on successful login
 
 # View recipes
-* TODO: Any user can view a recipe
+* DONE: Any user can view a recipe
 * DONE: Any user can view a list of recipes
 * TODO: Any user can search for a recipe using the recipe name or part of the recipe name
 * TODO: Any user can filter the recipe list using keywords
@@ -54,18 +54,18 @@
 * TODO: A logged in account can mark a meal plan recipe as not a favourite
 
 # Recipe
-* TODO: A recipe has a title
-* TODO: A recipe can have a summary
+* DONE: A recipe has a title
+* DONE: A recipe can have a summary
 * TODO: A recipe can have an image
-* TODO: A recipe can have a source
+* DONE: A recipe can have a source
 * TODO: A recipe can have notes
-* TODO: A recipe can have the number of servings
-* TODO: A recipe can have a yield
-* TODO: A recipe can have the preparation time
-* TODO: A recipe can have the cooking time
-* TODO: A recipe can have the total time
+* DONE: A recipe can have the number of servings
+* DONE: A recipe can have a yield
+* DONE: A recipe can have the preparation time
+* DONE: A recipe can have the cooking time
+* DONE: A recipe can have the total time
 * TODO: A recipe can have a list a ingredients
-* TODO: A recipe can have a list of instructions
+* DONE: A recipe can have a list of instructions
 
 # Ingredient
 * TODO: An ingredient has a name
