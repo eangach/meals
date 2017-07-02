@@ -88,5 +88,14 @@ describe 'Acceptance Tests' do
       page.body.text.must_include('Directions')
       page.body.text.must_include('Heat skillet.')
     end
+
+    it 'has the notes' do
+      recipe.notes.create( text: 'First note.')
+      recipe.save
+
+      visit "/recipes/#{recipe.id}"
+      page.body.text.must_include('Notes')
+      page.body.text.must_include('First note.')
+    end
   end
 end

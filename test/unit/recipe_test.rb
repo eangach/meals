@@ -85,4 +85,22 @@ describe Recipe do
     recipe.directions.first.text.must_equal 'Heat skillet'
     recipe.directions.last.text.must_equal 'Add oil'
   end
+
+  it 'can have a list of notes' do
+    recipe.notes.count.must_equal 0
+
+    recipe.notes.create text: 'First note'
+    recipe.notes.count.must_equal 1
+    recipe.notes.first.text.must_equal 'First note'
+  end
+
+  it 'can have multiple notes' do
+    recipe.notes.count.must_equal 0
+
+    recipe.notes.create text: 'First note'
+    recipe.notes.create text: 'Second note'
+    recipe.notes.count.must_equal 2
+    recipe.notes.first.text.must_equal 'First note'
+    recipe.notes.last.text.must_equal 'Second note'
+  end
 end

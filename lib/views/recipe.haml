@@ -46,3 +46,12 @@
           .direction
             %li
               %p= direction.text
+
+  -if recipe.notes.count > 0
+    .notes
+      %h2 Notes
+      %ol
+        - recipe.notes.each do |note|
+          .note
+            %li
+              %p= note.text

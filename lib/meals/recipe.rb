@@ -1,5 +1,6 @@
 require 'data_mapper'
 require_relative 'direction'
+require_relative 'note'
 
 # DataMapper::Logger.new($stdout, :debug)
 
@@ -18,6 +19,7 @@ class Recipe
   property :added_on, Date
 
   has n, :directions
+  has n, :notes
 end
 
 DataMapper.finalize

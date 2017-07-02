@@ -248,5 +248,54 @@ describe 'Unit Tests' do
 
       directions.must_be_empty
     end
+
+    it 'can have a list of notes' do
+      recipe.notes.create text: 'First note'
+
+      get "/recipes/#{recipe.id}"
+      html = last_response.body
+      page = Nokogiri::HTML(html)
+      notes =  page.css('.recipe .notes .note')
+
+      notes.first.text.strip.gsub(/\s\s+/, ' ').must_match /First note/
+    end
+
+    it 'can have multiple notes' do
+      recipe.notes.create text: 'First note'
+      recipe.notes.create text: 'Second note'
+
+      get "/recipes/#{recipe.id}"
+      html = last_response.body
+      page = Nokogiri::HTML(html)
+      notes =  page.css('.recipe .notes .note')
+
+      notes.first.text.strip.gsub(/\s\s+/, ' ').must_match /First note/
+      notes.last.text.strip.gsub(/\s\s+/, ' ').must_match /Second note/
+    end
+
+    it 'has the exact number of notes' do
+      recipe.notes.count.must_equal 0
+      recipe.notes.create text: 'First note'
+      recipe.notes.create text: 'Second note'
+      recipe.notes.create text: 'Third note'
+
+      get "/recipes/#{recipe.id}"
+      html = last_response.body
+      page = Nokogiri::HTML(html)
+      notes =  page.css('.recipe .notes .note')
+
+      notes.count.must_equal 3
+    end
+
+    it 'has the list of notes as optional' do
+      recipe.notes.count.must_equal 0
+
+      get "/recipes/#{recipe.id}"
+      html = last_response.body
+      page = Nokogiri::HTML(html)
+      notes =  page.css('.recipe .notes')
+
+      notes.must_be_empty
+    end
   end
 end
